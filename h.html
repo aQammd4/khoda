@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ToonVault — 3D Character Library</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <div class="noise"></div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+
+    <a class="brand" href="#">
+      <span class="brand-mark">✦</span>
+      <span>ToonVault</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#library">Library</a>
+      <a href="#collections">Collections</a>
+      <a href="#studio">3D Studio</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeBtn">◐</button>
+
+      <button
+        class="pill-btn"
+        onclick="document.querySelector('#library').scrollIntoView({behavior:'smooth'})"
+      >
+        Explore
+      </button>
+    </div>
+
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-copy reveal">
+
+        <div class="eyebrow">
+          <span class="pulse"></span>
+          LIVE 3D CHARACTER LIBRARY
+        </div>
+
+        <h1>
+          Every toon.<br>
+          <span>One 3D universe.</span>
+        </h1>
+
+        <p>
+          Explore character-sheet inspired profiles, rotate previews,
+          save favorites, and build your own visual library.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a class="primary-btn" href="#library">
+            Browse characters <span>↗</span>
+          </a>
+
+          <a class="ghost-btn" href="#studio">
+            Open 3D Studio
+          </a>
+
+        </div>
+
+        <div class="stats">
+
+          <div>
+            <b>120+</b>
+            <small>Character slots</small>
+          </div>
+
+          <div>
+            <b>18</b>
+            <small>Collections</small>
+          </div>
+
+          <div>
+            <b>24/7</b>
+            <small>Live interface</small>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- HERO CHARACTER -->
+      <div class="hero-stage reveal">
+
+        <div class="orb orb-a"></div>
+        <div class="orb orb-b"></div>
+
+        <div class="stage-card">
+
+          <div class="stage-top">
+            <span>CHARACTER SHEET</span>
+            <span>01 / 12</span>
+          </div>
+
+          <div class="fake-character pink">
+
+            <div class="eye e1"></div>
+            <div class="eye e2"></div>
+            <div class="smile"></div>
+
+          </div>
+
+          <div class="stage-bottom">
+
+            <div>
+              <small>FEATURED</small>
+              <strong>Pink Panther</strong>
+            </div>
+
+            <button
+              class="round-btn"
+              onclick="openModal('Pink Panther')"
+            >
+              ↗
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CHARACTER LIBRARY -->
+    <section id="library" class="section">
+
+      <div class="section-head reveal">
+
+        <div>
+
+          <span class="eyebrow">
+            CHARACTER LIBRARY
+          </span>
+
+          <h2>
+            Pick a character.<br>
+            <span>Make it yours.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="controls">
+
+          <label class="search">
+            <span>⌕</span>
+
+            <input
+              id="search"
+              type="text"
+              placeholder="Search characters..."
+            >
+          </label>
+
+
+          <select id="filter">
+
+            <option value="all">
+              All collections
+            </option>
+
+            <option value="classic">
+              Classic
+            </option>
+
+            <option value="kids">
+              Kids
+            </option>
+
+            <option value="iconic">
+              Iconic
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+
+      <div
+        class="grid"
+        id="characterGrid"
+      ></div>
+
+    </section>
+
+
+    <!-- COLLECTIONS -->
+    <section
+      id="collections"
+      class="section collections"
+    >
+
+      <div class="section-head reveal">
+
+        <div>
+
+          <span class="eyebrow">
+            CURATED DROPS
+          </span>
+
+          <h2>
+            Collections made<br>
+            <span>for your mood.</span>
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="collection-grid">
+
+        <article class="collection-card c1">
+
+          <span>01</span>
+
+          <h3>
+            Classic Icons
+          </h3>
+
+          <p>
+            Timeless animation energy.
+          </p>
+
+        </article>
+
+
+        <article class="collection-card c2">
+
+          <span>02</span>
+
+          <h3>
+            Gen Z Toons
+          </h3>
+
+          <p>
+            Bold, playful, internet-ready.
+          </p>
+
+        </article>
+
+
+        <article class="collection-card c3">
+
+          <span>03</span>
+
+          <h3>
+            Underwater
+          </h3>
+
+          <p>
+            Characters from below the surface.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- 3D STUDIO -->
+    <section
+      id="studio"
+      class="studio section"
+    >
+
+      <div class="studio-copy reveal">
+
+        <span class="eyebrow">
+          3D STUDIO
+        </span>
+
+        <h2>
+          A living preview<br>
+          <span>inside your browser.</span>
+        </h2>
+
+        <p>
+          Use the interactive preview to inspect a character-sheet
+          concept. Connect your licensed GLB/GLTF models later
+          for true 3D assets.
+        </p>
+
+
+        <div class="studio-tags">
+
+          <span>Rotate</span>
+          <span>Zoom</span>
+          <span>Preview</span>
+          <span>Responsive</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="viewer reveal">
+
+        <div class="viewer-grid"></div>
+
+
+        <div class="viewer-character">
+
+          <div class="head"></div>
+
+          <div class="body"></div>
+
+          <div class="shoe s1"></div>
+          <div class="shoe s2"></div>
+
+        </div>
+
+
+        <div class="viewer-label">
+          LIVE PREVIEW
+        </div>
+
+
+        <input
+          id="rotateRange"
+          type="range"
+          min="-25"
+          max="25"
+          value="0"
+          aria-label="Rotate preview"
+        >
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer id="about">
+
+    <div>
+
+      <a class="brand" href="#">
+        <span class="brand-mark">✦</span>
+        <span>ToonVault</span>
+      </a>
+
+      <p>
+        A modern front-end concept for a
+        3D character library.
+      </p>
+
+    </div>
+
+
+    <div class="footer-links">
+
+      <a href="#library">Library</a>
+      <a href="#collections">Collections</a>
+      <a href="#studio">Studio</a>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 ToonVault
+    </div>
+
+  </footer>
+
+
+  <!-- MODAL -->
+  <div
+    class="modal"
+    id="modal"
+    aria-hidden="true"
+  >
+
+    <div
+      class="modal-backdrop"
+      onclick="closeModal()"
+    ></div>
+
+
+    <div class="modal-card">
+
+      <button
+        class="close"
+        onclick="closeModal()"
+      >
+        ×
+      </button>
+
+
+      <div class="modal-art">
+
+        <div
+          class="fake-character mini"
+          id="modalCharacter"
+        ></div>
+
+      </div>
+
+
+      <div>
+
+        <span class="eyebrow">
+          CHARACTER SHEET
+        </span>
+
+        <h2 id="modalTitle">
+          Character
+        </h2>
+
+        <p>
+          Preview panel ready for your licensed
+          3D model, reference images, poses and
+          downloadable character-sheet data.
+        </p>
+
+        <button
+          class="primary-btn"
+          onclick="closeModal()"
+        >
+          Use in Studio ↗
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
